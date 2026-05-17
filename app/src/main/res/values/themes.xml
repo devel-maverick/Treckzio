@@ -1,0 +1,9 @@
+<resources>
+    <!-- App theme -->
+    <style name="Theme.WeatherSnap" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#0F1208</item>
+        <item name="android:navigationBarColor">#0F1208</item>
+        <item name="android:windowBackground">#0F1208</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
