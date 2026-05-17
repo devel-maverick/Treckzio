@@ -32,7 +32,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.runtime.collectAsState
 import com.weathersnap.app.domain.model.CitySuggestion
 import com.weathersnap.app.domain.model.WeatherSnapshot
 import com.weathersnap.app.ui.components.BrandHeader
@@ -54,7 +54,7 @@ fun WeatherScreen(
     onOpenReports: () -> Unit,
     viewModel: WeatherViewModel = hiltViewModel()
 ) {
-    val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsState()
 
     Column(
         modifier = Modifier

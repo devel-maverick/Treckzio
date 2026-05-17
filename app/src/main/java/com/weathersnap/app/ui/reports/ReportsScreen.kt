@@ -27,7 +27,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.runtime.collectAsState
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.weathersnap.app.data.local.ReportEntity
@@ -52,7 +52,7 @@ fun ReportsScreen(
     onBack: () -> Unit,
     viewModel: ReportsViewModel = hiltViewModel()
 ) {
-    val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsState()
     val subtitle = if (state.items.isEmpty()) "No reports yet" else "${state.items.size} reports"
 
     Column(

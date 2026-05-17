@@ -31,7 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.runtime.collectAsState
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.weathersnap.app.data.repository.ReportDraftHolder
@@ -59,7 +59,7 @@ fun CreateReportScreen(
     onSaved: () -> Unit,
     viewModel: CreateReportViewModel = hiltViewModel()
 ) {
-    val state by viewModel.state.collectAsStateWithLifecycle()
+    val state by viewModel.state.collectAsState()
 
     // Go back if no weather data
     LaunchedEffect(state.snapshot) {
