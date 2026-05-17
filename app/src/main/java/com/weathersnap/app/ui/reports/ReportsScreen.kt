@@ -89,7 +89,7 @@ private fun EmptyState() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(CardSurface)
             .padding(28.dp),
         contentAlignment = Alignment.Center
@@ -115,7 +115,7 @@ private fun ReportCard(report: ReportEntity) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(CardSurface)
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)

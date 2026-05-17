@@ -14,9 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.unit.dp
-import com.weathersnap.app.ui.theme.LimeAccent
 import com.weathersnap.app.ui.theme.LimeAccentSoft
 import com.weathersnap.app.ui.theme.OnLime
 
@@ -32,22 +30,20 @@ fun BrandHeader(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
-            .background(
-                brush = Brush.horizontalGradient(listOf(LimeAccentSoft, LimeAccent))
-            )
-            .padding(horizontal = 18.dp, vertical = 16.dp)
+            .clip(RoundedCornerShape(12.dp))
+            .background(LimeAccentSoft)
+            .padding(horizontal = 16.dp, vertical = 14.dp)
     ) {
         Column(modifier = Modifier.align(Alignment.CenterStart)) {
             Text(
                 text = title,
-                style = MaterialTheme.typography.headlineLarge,
+                style = MaterialTheme.typography.headlineSmall,
                 color = OnLime
             )
             Text(
                 text = subtitle,
-                style = MaterialTheme.typography.bodyMedium,
-                color = OnLime.copy(alpha = 0.72f)
+                style = MaterialTheme.typography.bodySmall,
+                color = OnLime.copy(alpha = 0.7f)
             )
         }
         if (actionLabel != null && onAction != null) {
@@ -57,10 +53,10 @@ fun BrandHeader(
                     containerColor = OnLime,
                     contentColor = LimeAccentSoft
                 ),
-                shape = RoundedCornerShape(50),
+                shape = RoundedCornerShape(8.dp),
                 modifier = Modifier.align(Alignment.CenterEnd)
             ) {
-                Text(actionLabel, style = MaterialTheme.typography.labelLarge)
+                Text(actionLabel)
             }
         }
     }

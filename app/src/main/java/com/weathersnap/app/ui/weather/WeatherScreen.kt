@@ -100,7 +100,7 @@ private fun SearchCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(Surface)
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -138,9 +138,9 @@ private fun SearchCard(
                     containerColor = LimeAccentSoft,
                     contentColor = OnLime
                 ),
-                shape = RoundedCornerShape(50)
+                shape = RoundedCornerShape(8.dp)
             ) {
-                Text("Search", style = MaterialTheme.typography.labelLarge)
+                Text("Search")
             }
         }
         Text(
@@ -250,7 +250,7 @@ private fun WeatherPlaceholder() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(Surface)
             .padding(20.dp)
     ) {
@@ -267,7 +267,7 @@ private fun WeatherLoading() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(Surface)
             .padding(20.dp),
         verticalAlignment = Alignment.CenterVertically,
@@ -287,7 +287,7 @@ private fun WeatherError(message: String) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(Surface)
             .padding(20.dp)
     ) {
@@ -302,7 +302,7 @@ private fun WeatherSuccess(snapshot: WeatherSnapshot, onCreateReport: () -> Unit
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(CardSurface)
             .padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)
@@ -316,9 +316,9 @@ private fun WeatherSuccess(snapshot: WeatherSnapshot, onCreateReport: () -> Unit
                 containerColor = LimeAccentSoft,
                 contentColor = OnLime
             ),
-            shape = RoundedCornerShape(50)
+            shape = RoundedCornerShape(8.dp)
         ) {
-            Text("Create Report", style = MaterialTheme.typography.titleMedium)
+            Text("Create Report")
         }
     }
 }

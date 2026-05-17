@@ -116,7 +116,7 @@ private fun WeatherCard(snapshot: WeatherSnapshot) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(CardSurface)
             .padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -133,7 +133,7 @@ private fun PhotoCard(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(CardSurface)
             .padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)
@@ -190,7 +190,7 @@ private fun PhotoCard(
                 containerColor = LimeAccentSoft,
                 contentColor = OnLime
             ),
-            shape = RoundedCornerShape(50)
+            shape = RoundedCornerShape(8.dp)
         ) {
             Text(if (capture == null) "Capture Photo" else "Retake Photo")
         }
@@ -222,7 +222,7 @@ private fun NotesCard(notes: String, onNotesChange: (String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .clip(RoundedCornerShape(20.dp))
+            .clip(RoundedCornerShape(12.dp))
             .background(CardSurface)
             .padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
@@ -259,7 +259,7 @@ private fun SaveButton(state: SaveState, enabled: Boolean, onClick: () -> Unit) 
             disabledContainerColor = LimeAccentSoft.copy(alpha = 0.4f),
             disabledContentColor = OnLime.copy(alpha = 0.6f)
         ),
-        shape = RoundedCornerShape(50)
+        shape = RoundedCornerShape(8.dp)
     ) {
         if (state is SaveState.Saving) {
             CircularProgressIndicator(

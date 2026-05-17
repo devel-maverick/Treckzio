@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.compose.runtime.collectAsState
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus
 import com.google.accompanist.permissions.rememberPermissionState
@@ -53,7 +53,7 @@ fun CameraScreen(
     onCaptured: () -> Unit,
     viewModel: CameraViewModel = hiltViewModel()
 ) {
-    val cameraState by viewModel.state.collectAsStateWithLifecycle()
+    val cameraState by viewModel.state.collectAsState()
     val permission = rememberPermissionState(Manifest.permission.CAMERA)
 
     Box(
@@ -110,7 +110,7 @@ private fun PermissionGate(
                 containerColor = LimeAccentSoft,
                 contentColor = OnLime
             ),
-            shape = RoundedCornerShape(50)
+            shape = RoundedCornerShape(8.dp)
         ) { Text("Grant permission") }
         OutlinedButton(
             onClick = onClose,
@@ -170,7 +170,7 @@ private fun CameraContent(
             )
             OutlinedButton(
                 onClick = onClose,
-                shape = RoundedCornerShape(50)
+                shape = RoundedCornerShape(8.dp)
             ) {
                 Text("Close", color = Color.White)
             }
@@ -227,14 +227,14 @@ private fun CameraContent(
                 enabled = state !is CameraState.Capturing && state !is CameraState.Compressing,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(RoundedCornerShape(50)),
+                    .clip(RoundedCornerShape(8.dp)),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = LimeAccentSoft,
                     contentColor = OnLime
                 ),
-                shape = RoundedCornerShape(50)
+                shape = RoundedCornerShape(8.dp)
             ) {
-                Text("Capture", style = MaterialTheme.typography.titleMedium)
+                Text("Capture")
             }
         }
     }
